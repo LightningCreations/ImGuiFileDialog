@@ -26,7 +26,7 @@ SOFTWARE.
 */
 
 #include "ImGuiFileDialog.h"
-#include "imgui.h"
+#include <imgui.h>
 
 #include <float.h>
 #include <string.h> // stricmp / strcasecmp
@@ -943,7 +943,8 @@ namespace igfd
 				ImGui::SameLine();
 				ImGui::Text(searchString);
 				ImGui::SameLine();
-				ImGui::PushItemWidth(ImGui::GetContentRegionAvail().x);
+				float aw = ImGui::GetContentRegionAvail().x;
+				ImGui::PushItemWidth(aw);
 				bool edited = ImGui::InputText("##ImGuiFileDialogSearchFiled", SearchBuffer, MAX_FILE_DIALOG_NAME_BUFFER);
 				ImGui::PopItemWidth();
 				if (edited)
