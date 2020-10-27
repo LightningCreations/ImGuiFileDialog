@@ -1017,7 +1017,7 @@ namespace igfd
 	#endif
 #endif
 				int countRows = (int)m_FilteredFileList.size();
-                ImGuiListClipper clipper(countRows, ImGui::GetTextLineHeightWithSpacing());
+                ImGuiListClipper clipper;
                 while(clipper.Step())
                 {
                     for(int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
